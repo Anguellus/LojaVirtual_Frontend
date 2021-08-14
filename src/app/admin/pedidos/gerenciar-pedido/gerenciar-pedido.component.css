@@ -1,0 +1,173 @@
+/* input outline color */
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: lightcoral;
+     /* opacity: 1!important; */
+  }
+  
+  /* mat-input focused color */
+  ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: ivory;
+  } 
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+color: rgb(199, 197, 197);
+    /* opacity: 1!important; */
+}
+  
+ ::ng-deep .mat-select-panel {
+    background-color: #Da0037;
+    color: black;
+} 
+
+.mat-option.mat-selected:not(.mat-option-multiple) {
+    color: white;
+    background-color: #Da0037;
+}
+
+::ng-deep .mat-select-value {
+    color: white;
+}
+
+::ng-deep .mat-select-arrow {
+    color: white;
+}
+
+mat-card {
+    /* margin-top: 10px;
+    margin-left: 10px;
+    width: 15%; */
+    font-size: smaller;
+    background-color: white;
+    width: max-content;
+}
+
+.tabela {
+    background-color: tomato;
+    width: max-content;
+}
+
+th {
+    text-align: center;
+    vertical-align: middle;
+    color:white;
+    border-bottom-color: white;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+td {
+    text-align: center;
+    vertical-align: middle;
+    color:white;
+}
+
+.cardClientes {
+    background-color: #Da0037;
+    /* border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: #DA0037; */
+    color: white;
+}
+
+.cardProdutos{
+    background-color: rgba(255, 99, 71, 0.63);
+    /* border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: #DA0037; */
+    color: white;
+}
+
+.cardCarrinho{
+    background-color: tomato;
+    /* border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: #DA0037; */
+    color: white;
+}
+
+mat-label {
+    color: white;
+}
+
+mat-option{
+    color: white;
+}
+
+.black {
+    color: black;
+}
+
+.principal {
+    padding-left: 10px;
+    padding-top: 10px;
+    /* margin-top: 1%;
+    margin-left: 1%; */
+    margin: 2em auto;
+    align-self: center;
+    align-content: center;
+    /* width: 98%; */
+    width: max-content;
+}
+
+.finalizar {
+    background-color: white;
+    color: black;    
+}
+
+.carrinho {
+    min-width: 30%px;
+}
+
+mat-card-title {
+    font-size: medium;
+}
+
+.conteudo {
+    padding-bottom: 30px;
+}
+
+.alinhamento {
+    text-align: center;
+    vertical-align: middle;
+    padding-left: 20px;
+    margin-left: 20px;
+    color:white
+}
+
+.alinharBotao{
+    text-align: center;
+    vertical-align: middle;
+}
+
+.botao { 
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: center;
+    background-color: white;
+    color: #Da0037;
+}
+
+.botaoFinalizar { 
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: center;
+    background-color: #Da0037;
+    color: white;
+}
+
+.totalPedido {
+    color: black;
+    font-weight: bold;
+}
+
+.valorTotalPedido {
+    color: #Da0037;
+    font-size: large;
+}

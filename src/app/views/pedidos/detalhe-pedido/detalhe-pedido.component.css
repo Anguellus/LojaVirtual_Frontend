@@ -1,0 +1,58 @@
+table {
+    margin-top: 10px;
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    background-color:white;  
+}
+
+.conteudo {
+    color: black;
+    padding-bottom: 10px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: #DA0037;
+    border-width: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
+th{
+    border-bottom-width: 1px;
+    border-bottom-color: #DA0037;
+}
+
+.alinhamento {
+    text-align: center;
+    vertical-align: middle;
+    color:black;
+}
+
+.bordaLateral {
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-right-color: #DA0037;
+    border-left-color: #DA0037;
+}
+
+.botao { 
+    margin-left: 12px;
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #DA0037;
+    color: #DA0037;
+}
+
+.edit > i {
+    margin-right:10px;
+}
+
+.edit > i {
+    color: #d9cd26;
+}
+
+.delete > i {
+    color: #ff6e7d;
+}

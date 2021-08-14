@@ -1,0 +1,66 @@
+.background {
+  /* background-image: url("./imagens/background.jpg"); */
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, white 50%, #DA0037 100%);
+}
+
+.container {
+  justify-content: space-between;
+  align-content: space-between;
+  background-color: white;
+  border-radius: 0cm;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
+  row-gap: 20px;
+  padding-bottom: 30px;
+}
+
+.titulo {
+  font-size: 1.2em;
+}
+
+.preco {
+  font-size: large;
+  text-align: left;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: white;
+  background-color: white;
+  border-width: 1px;
+  color:#DA0037;
+}
+
+.alinhamento {
+  text-align: center;
+  vertical-align: middle;
+  background-color: rgb(207, 207, 207);
+  color: #DA0037;
+}
+
+.center {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.card {
+  max-width: 20%;
+  background-color: white;
+  color: black;
+  align-content: center;
+  align-items: center;
+  flex-grow: 1;
+  border-width: 1px;
+  border-color: #DA0037;
+  border-style: solid;
+
+}
+
+.foto{
+    width: 290px;
+}
+  
+  .avatar {
+    background-size: cover;
+  }

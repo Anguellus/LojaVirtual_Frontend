@@ -1,0 +1,37 @@
+<mat-card class="cardFormat">
+    <mat-card-title>Novo Produto</mat-card-title>
+    <form fxLayout="row wrap" fxLayoutGap="20px">
+        <mat-form-field floatLabel="always" appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input matInput placeholder="Nome" [(ngModel)]="produto.nome" name="nome">
+        </mat-form-field>
+        <mat-form-field floatLabel="always" appearance="outline">
+            <mat-label>Preço</mat-label>
+            <input matInput placeholder="Preço (R$)" [(ngModel)]="produto.preco" name="preco">
+        </mat-form-field>
+        <mat-form-field floatLabel="always" appearance="outline">
+            <mat-label>Estoque</mat-label>
+            <input matInput placeholder="Estoque" [(ngModel)]="produto.estoque" name="estoque">
+        </mat-form-field>
+        <mat-form-field floatLabel="always" appearance="outline" class="descricao">
+            <mat-label>Descrição</mat-label>
+            <input matInput placeholder="Descrição" [(ngModel)]="produto.descricao" name="descricao">
+        </mat-form-field>
+    </form>
+    <p></p>
+    <div>
+        <label for="avatar2">Selecione o avatar: </label>
+        <input #fileInput (change)="onChangeAvatar(fileInput.files)" type="file" name="Avatar2" id="avatar2">
+        <p></p>
+        <label for="Foto2">Selecione a foto: </label>
+        <input #fileInputFoto (change)="onChangeFoto(fileInputFoto.files)" type="file" name="Foto2" id="Foto2">
+    </div>
+    <p></p>
+    <p></p>
+    <button mat-raised-button class="btnCancelar" (click)="cancel()">
+        Cancelar
+    </button>
+    <button mat-raised-button  (click)="criarProduto()">
+        Salvar
+    </button>
+</mat-card>

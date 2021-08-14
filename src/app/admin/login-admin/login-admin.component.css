@@ -1,0 +1,34 @@
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+button {
+    margin-top: 10px;
+    margin-left: 10px;
+    background-color: #DA0037;
+    color: white;
+}
+
+mat-card {
+    color: black;
+    max-width: 30%;
+    margin: 8em auto;
+    text-align: center;
+    background-color: rgb(190, 190, 190);
+}
+
+
+mat-form-field {
+    display: block;
+}
+
+input::placeholder {
+    color:  rgb(133, 133, 133);
+    background-color: none;
+}
+
+mat-label {
+    color: black;
+}

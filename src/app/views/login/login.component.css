@@ -1,0 +1,48 @@
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.botao { 
+    margin-top: 10px;
+    margin-left: 10px;
+    background-color: #DA0037;
+    /* border-style: solid;
+    border-width: 1px;
+    border-color: #DA0037; */
+    color: white;
+}
+
+.botaoCadastro { 
+    margin-top: 10px;
+    margin-left: 10px;
+    background-color: rgb(190, 190, 190);
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(126, 126, 126);
+    color: black;
+}
+
+input::placeholder {
+    color:  rgb(133, 133, 133);
+    background-color: none;
+}
+
+mat-card {
+    color: black;
+    max-width: 30%;
+    margin: 8em auto;
+    text-align: center;
+    background-color: rgb(190, 190, 190);
+    /* box-shadow: 60px -16px teal */
+}
+
+mat-form-field {
+    display: block;
+}
+
+mat-label {
+    color: black;
+}

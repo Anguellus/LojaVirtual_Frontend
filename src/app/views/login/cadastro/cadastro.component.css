@@ -1,0 +1,61 @@
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.nome {
+    width: 800px;
+}
+
+.email {
+    width: 600px;
+}
+
+.endereco {
+    width: 1000px;
+}
+
+.botao {
+
+    margin-right: 15px;
+    margin-top: 20px;
+    background-color: #DA0037;
+    border-width: 1px;
+    color: white;
+}
+
+.cancelar {
+    margin-top: 10px;
+    margin-left: 10px;
+    background-color: rgb(190, 190, 190);
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(126, 126, 126);
+    color: black;
+}
+
+mat-card {
+    /* border-radius: 5px; */
+    /* border-style: solid; */
+    /* border-width: 1px; */
+    /* border-color: #DA0037; */
+    max-width: 65%;
+    margin: 1em auto;
+    text-align: center;
+    background-color: rgb(190, 190, 190);
+    color: black;
+}
+
+input::placeholder {
+    color:  rgb(133, 133, 133);
+}
+
+mat-label {
+    color: black;
+}
+
+mat-form-field {
+    display: block;
+    color: black;
+}

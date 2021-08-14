@@ -1,0 +1,81 @@
+/* input outline color */
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #Da0037;
+     /* opacity: 1!important; */
+  }
+  
+  /* mat-input focused color */
+  ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: #Da0037;
+  } 
+
+mat-card {
+    width: 600px;
+    color: black;
+}
+
+mat-label {
+    color: black;
+}
+
+.cardFormat{
+    background-color: white;
+    border-radius: 5px;
+    border-color: tomato;
+    border-width: 1px;
+    border-style: solid;
+    color: black;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+button {
+    margin-right: 15px;
+    margin-top: 20px;
+    background-color:black
+}
+
+.btnCancelar {
+    margin-right: 15px;
+    margin-top: 20px;
+    background-color:rgb(234, 22, 34);
+}
+
+.fotoslabel {
+    position: absolute;
+    left: 15px;
+    top: 170px;
+}
+
+.fotoslabel2 {
+    position: absolute;
+    left: 15px;
+    top: 200px;
+}
+
+.fotos {
+    position: absolute;
+    left: 135px;
+    top:170px
+}
+
+.fotos2 {
+    position: absolute;
+    left: 135px;
+    top:200px
+}
+
+.descricao {
+    width: 600px;
+}
+
+mat-card {
+    max-width: 95%;
+    margin: 1em auto;
+    text-align: center;
+    background-color:tomato;
+}

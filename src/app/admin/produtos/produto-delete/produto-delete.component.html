@@ -1,0 +1,19 @@
+<mat-card class="container mat-elevation-z0">
+    <mat-card class="card mat-elevation-z0">
+        <mat-card-header class="cabecalho">
+            <div mat-card-avatar style="background-image: url('{{produto.fotoAvatar}}')" class="avatar"></div>
+            <mat-card-title class="titulo">{{produto.nome}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image class="foto" src={{produto.foto}} alt="HB1">
+        <mat-card-content>{{produto.descricao}}</mat-card-content>
+        <mat-card-content class="preco">{{produto.preco | currency: 'BRL'}}</mat-card-content>
+        <mat-card-actions class="containerBtn" fxLayout="row wrap" fxLayoutGap="0px">
+            <button class="botaoCancel" mat-raised-button (click)="cancel()">
+                Cancelar
+            </button>
+            <button class="botaoOk " mat-raised-button (click)="deleteProduct()" color="warn">
+                Excluir
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</mat-card>

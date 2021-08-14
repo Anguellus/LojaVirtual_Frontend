@@ -1,0 +1,51 @@
+<mat-card class="container card mat-elevation-z0">
+    <mat-card-title>Atualizar produto</mat-card-title>
+    <mat-card-header class="cabecalho">
+        <div mat-card-avatar style="background-image: url('{{produto.fotoAvatar}}')" class="avatar">
+        </div>
+        <div class="arquivo">
+            <label for="avatar2">Selecione o avatar: </label>
+            <input #fileInput (change)="onChangeAvatar(fileInput.files)" type="file" name="Avatar2" id="avatar2">
+        </div>
+    </mat-card-header>
+    <p></p>
+    <mat-card-content>
+        <div>
+            <p></p>
+            <img mat-card-image class="foto" src={{produto.foto}} alt="HB1">
+        </div>
+        <div>
+            <label for="Foto2">Selecione a foto: </label>
+            <input class="inputFoto" #fileInputFoto (change)="onChangeFoto(fileInputFoto.files)" type="file" name="Foto2" id="Foto2">
+        </div>
+    </mat-card-content>
+    <p></p>
+    <mat-card-content>
+        <form>
+            <mat-form-field floatLabel="always" appearance="outline">
+                <mat-label>Nome</mat-label>
+                <input matInput placeholder="Nome" [(ngModel)]="produto.nome" name="nome">
+            </mat-form-field>
+            <mat-form-field floatLabel="always" appearance="outline">
+                <mat-label>Preço</mat-label>
+                <input matInput placeholder="Preço (R$)" [(ngModel)]="produto.preco" name="preco">
+            </mat-form-field>
+            <mat-form-field floatLabel="always" appearance="outline">
+                <mat-label>Estoque</mat-label>
+                <input matInput placeholder="Estoque" [(ngModel)]="produto.estoque" name="estoque">
+            </mat-form-field>
+            <mat-form-field class="descricao" floatLabel="always" appearance="outline">
+                <mat-label>Descrição</mat-label>
+                <input matInput placeholder="Descrição" [(ngModel)]="produto.descricao" name="descricao">
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-content class="containerBtn">
+        <button class="botaoCancel" mat-raised-button (click)="cancel()">
+            Cancelar
+        </button>
+        <button class="botaoOk" mat-raised-button (click)="updateProduto()" color="primary">
+            Salvar
+        </button>
+    </mat-card-content>
+</mat-card>

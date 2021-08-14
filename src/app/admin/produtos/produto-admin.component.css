@@ -1,0 +1,52 @@
+table {
+    width: 98%;
+    margin-top: 10px;
+    margin-left: 1%;
+    margin-right: 1%;
+    background-color:white;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: tomato;
+    padding: 1px;
+}
+
+.conteudo {
+    padding-bottom: 30px;
+    color: black;
+}
+
+th {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom: tomato;
+    color: tomato;
+    font-weight: bold;
+}
+
+td {
+    color: black;
+    /* text-align: center; */
+}
+
+.botao { 
+    margin-top: 10px;
+    margin-left: 12px;
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: tomato;
+    color: tomato
+}
+
+.edit > i {
+    margin-right:10px;
+}
+
+.edit > i {
+    color: teal;
+}
+
+.delete > i {
+    color: tomato
+}

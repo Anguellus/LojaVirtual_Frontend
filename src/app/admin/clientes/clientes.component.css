@@ -1,0 +1,39 @@
+table {
+    width: 100%;
+    background-color: grey
+}
+
+th {
+    color: white
+}
+
+td {
+    color:black
+}
+.conteudo {
+    margin-top: 10px;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.botao { 
+    margin-top: 10px;
+    margin-left: 10px;
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(234, 22, 34);
+    color: rgb(234, 22, 34)
+}
+
+.edit > i {
+    margin-right:10px;
+}
+
+.edit > i {
+    color: #21b11c;
+}
+
+.delete > i {
+    color: #ff0019
+}

@@ -1,0 +1,67 @@
+.container {
+    justify-content: space-between;
+    align-content: space-between;
+    background-color: white;
+    border-radius: 0cm;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    row-gap: 20px;
+    padding-bottom: 30px;
+    
+  }
+
+  .containerBtn {
+    justify-content: space-between;
+    align-content: space-between;
+  }
+
+.botaoCancel { 
+  margin-top: 10px;
+  margin-left: 20px;
+  background-color: rgb(234, 22, 34);
+  /* border-style: solid;
+  border-width: 1px;
+  border-color: tomato; */
+  color: white;
+}
+
+.botaoOk { 
+  margin-right: 20px;
+  background-color: black;
+  /* border-style: solid;
+  border-width: 1px;
+  border-color: tomato; */
+  color: white;
+}
+  
+  .titulo {
+    font-size: 1.2em;
+  }
+  
+  .preco {
+    font-size: large;
+    font-style: italic;
+    font-weight: 500;
+    color:rgb(56, 72, 80);
+  }
+  
+  .card {
+    max-width: 200px;
+    background-color: white;
+    color: black;
+    align-content: center;
+    align-items: center;
+    flex-grow: 1;
+    border-width: 1px;
+    border-color: tomato;
+    border-style: ridge;
+  }
+  
+  .foto{
+      width: 232px;
+  }
+    
+  .avatar {
+    background-size: cover;
+  }

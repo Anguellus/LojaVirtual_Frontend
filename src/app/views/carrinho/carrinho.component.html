@@ -1,0 +1,94 @@
+<div class="tableVazia alinhamento">
+    <table *ngIf="totalPedido == 0">
+        <th></th>
+        <td class="mensagem">
+            <strong>Seu carrinho está vazio!</strong>
+            <p>
+            </p>
+            <span class="material-icons">
+                remove_shopping_cart
+            </span>
+        </td>
+    </table>
+</div>
+<div *ngIf="totalPedido!= 0" class="faixaItem">
+    <span class="textoFaixa"><strong>Carrinho</strong>
+        <i class="material-icons iconeFaixa alinhamento">
+            shopping_cart
+        </i>
+    </span>
+</div>
+<p></p>
+<div class="container" fxLayout="row wrap" fxLayoutGap="20px">
+
+    <div>
+        <table class="tableProdutos" *ngIf="totalPedido!= 0" mat-table [dataSource]="pedido">
+            <ng-container matColumnDef="produtos">
+                <th class="cabecalhoProd" mat-header-cell *matHeaderCellDef>Produtos</th>
+                <td mat-cell *matCellDef="let row">
+                    <table mat-table [dataSource]="pedido[0].produtos">
+                        <ng-container matColumnDef="nome">
+                            <th mat-header-cell *matHeaderCellDef>Nome</th>
+                            <td class="campos" mat-cell *matCellDef="let row2">{{row2.nome}}</td>
+                        </ng-container>
+                        <ng-container matColumnDef="preco">
+                            <th mat-header-cell *matHeaderCellDef>Preço</th>
+                            <td class="campos" mat-cell *matCellDef="let row2">{{row2.preco | currency: 'BRL'}}</td>
+                        </ng-container>
+                        <ng-container matColumnDef="quantidade">
+                            <th mat-header-cell *matHeaderCellDef>Quantidade</th>
+                            <td class="campos" mat-cell *matCellDef="let row2">
+                                <button (click)="diminuirQtd(row2._id)" mat-icon-button>
+                                    <i class="material-icons remove">
+                                        remove
+                                    </i>
+                                </button>
+                                {{row2.quantidade}}
+                                <button (click)="aumentarQtd(row2._id)" mat-icon-button>
+                                    <i class="material-icons add">
+                                        add
+                                    </i>
+                                </button>
+                            </td>
+                        </ng-container>
+                        <ng-container matColumnDef="total_item">
+                            <th mat-header-cell *matHeaderCellDef>Total Item</th>
+                            <td class="campos" mat-cell *matCellDef="let row2">{{row2.quantidade * row2.preco |
+                                currency:
+                                'BRL'}}
+                            </td>
+                        </ng-container>
+                        <ng-container matColumnDef="action">
+                            <th mat-header-cell *matHeaderCellDef>Ações</th>
+                            <td class="campos" mat-cell *matCellDef="let row2">
+                                <button mat-raised-button matTooltip="remover do carrinho" class="alinhamento"
+                                    (click)="removerItem(row2._id)" mat-icon-button>
+                                    <i class="material-icons delete">
+                                        delete
+                                    </i>
+                                </button>
+                            </td>
+                        </ng-container>
+                        <tr mat-header-row *matHeaderRowDef="produtoDisplayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row2; columns: produtoDisplayedColumns"></tr>
+                    </table>
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+
+    </div>
+    <div *ngIf="totalPedido != 0" class="finalizar">
+        <mat-card class="mat-elevation-z0">
+            <mat-card-content>
+                <button class="btnAcoes" mat-raised-button (click)="finalizarPedido()">
+                    Finalizar
+                </button>
+            </mat-card-content>
+            <mat-card-content class="precoTotal">
+                <b>Valor total do pedido : </b><b class="valorTotal">{{totalPedido | currency: 'BRL'}}</b>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

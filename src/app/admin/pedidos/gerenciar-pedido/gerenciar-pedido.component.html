@@ -1,0 +1,110 @@
+<mat-card class="principal mat-elevation-z0" fxLayout="row wrap" fxLayoutGap="20px">
+
+    <!-- SELEÇAO DOS CLIENTES -->
+    <mat-card class="cardClientes">
+        <mat-card-title>Selecione o cliente</mat-card-title>
+        <mat-card-content>
+            <form>
+                <mat-form-field appearance="fill">
+                    <mat-label>{{clienteSelect.nome}}</mat-label>
+                    <mat-select [(ngModel)]="clienteSelect" name="clienteSelect">
+                        <mat-option *ngFor="let cliente of clientes; let i = index" [value]="cliente">
+                            {{cliente.nome}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </form>
+        </mat-card-content>
+        <mat-card-content *ngIf="clienteSelect.nome != ''">
+            <form>
+                <mat-form-field floatLabel="always" appearance="outline">
+                    <mat-label>Telefone</mat-label>
+                    <input matInput placeholder="Telefone" [(ngModel)]="clienteSelect.telefone" name="telefone">
+                </mat-form-field>
+                <p></p>
+                <mat-form-field floatLabel="always" appearance="outline">
+                    <mat-label>Endereço</mat-label>
+                    <input matInput placeholder="Endereço" [(ngModel)]="clienteSelect.endereco" name="endereco">
+                </mat-form-field>
+            </form>
+        </mat-card-content>
+    </mat-card>
+
+    <!-- SELEÇAO DOS PRODUTOS -->
+    <mat-card class="cardProdutos" *ngIf="clienteSelect.nome != ''">
+        <mat-card-title>Selecione os produtos</mat-card-title>
+        <mat-card-content>
+            <form fxLayout="row wrap" fxLayoutGap="20px">
+                <mat-form-field appearance="fill">
+                    <mat-label>{{produtoSelect.nome}}</mat-label>
+                    <mat-select [(ngModel)]="produtoSelect" name="produtoSelect">
+                        <mat-option *ngFor="let produto of produtos; let i = index" [value]="produto">
+                            {{produto.nome}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </form>
+        </mat-card-content>
+        <mat-card-content *ngIf="produtoSelect.nome != ''">
+            <form>
+                <mat-form-field floatLabel="always" appearance="outline">
+                    <mat-label>Preco</mat-label>
+                    <input matInput placeholder="Preço" [(ngModel)]="produtoSelect.preco" name="preco">
+                </mat-form-field>
+                <p></p>
+                <mat-form-field floatLabel="always" appearance="outline">
+                    <mat-label>Quantidade</mat-label>
+                    <input matInput [(ngModel)]="produtoSelect.quantidade" name="quantidade">
+                </mat-form-field>
+            </form>
+        </mat-card-content>
+        <mat-card-content class="alinharBotao" *ngIf="produtoSelect.nome != ''">
+            <button class="botao" (click)="adicionarAoCarrinho()" mat-raised-button>
+                Adicionar
+            </button>
+        </mat-card-content>
+    </mat-card>
+
+    <!-- CARRINHO -->
+    <mat-card class="cardCarrinho" *ngIf="carrinho.length != 0">
+        <mat-card-title>Carrinho</mat-card-title>
+        <mat-card-content>
+            <ng-container>
+                <table class="tabela" mat-table [dataSource]="carrinho">
+                    <ng-container class="carrinho" matColumnDef="nome">
+                        <th class="alinhamento" mat-header-cell *matHeaderCellDef>Item</th>
+                        <td class="alinhamento" mat-cell *matCellDef="let row">{{row.nome}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="preco">
+                        <th class="alinhamento" mat-header-cell *matHeaderCellDef>Preço</th>
+                        <td class="alinhamento" mat-cell *matCellDef="let row">{{row.preco | currency: 'BRL'}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="quantidade">
+                        <th class="alinhamento" mat-header-cell *matHeaderCellDef>Quantidade</th>
+                        <td class="alinhamento" mat-cell *matCellDef="let row">{{row.quantidade}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="total_item">
+                        <th class="alinhamento" mat-header-cell *matHeaderCellDef>Total Item</th>
+                        <td class="alinhamento" mat-cell *matCellDef="let row">{{row.quantidade * row.preco |
+                            currency: 'BRL'}}</td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+                </table>
+            </ng-container>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="mat-elevation-z0 finalizar" *ngIf="carrinho.length != 0">
+        <mat-card-content class="totalPedido" *ngIf="produtoSelect.nome != ''">
+            Total Pedido: <span class="valorTotalPedido">{{this.totalPedido | currency: 'BRL'}}</span>
+        </mat-card-content>
+        <mat-card-content class="botao" *ngIf="produtoSelect.nome != ''">
+            <button class="botaoFinalizar" (click)="finalizarPedido()" mat-raised-button>
+                Finalizar
+            </button>
+        </mat-card-content>
+    </mat-card>
+
+</mat-card>
