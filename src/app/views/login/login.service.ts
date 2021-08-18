@@ -7,13 +7,14 @@ import { catchError, map } from 'rxjs/operators';
 import { Login } from './login.model';
 import { Usuario } from './usuario.model';
 import * as CryptoJS from 'crypto-js'
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  baseURL = "http://localhost:8080/usuarios/";
+  baseURL = `${environment.API}usuarios/`;
   baseURLLogin = "http://localhost:3002/login_server";
 
   chaveCripto = "rolling thunder"

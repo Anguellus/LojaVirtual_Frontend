@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { EMPTY, Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { UsuarioAdmin } from './usuariosAdmin.model';
 
 @Injectable({
@@ -10,7 +11,7 @@ import { UsuarioAdmin } from './usuariosAdmin.model';
 })
 export class UsuariosAdminService {
 
-  baseURL = "http://localhost:8080/admin/";
+  baseURL = `${environment.API}admin/`;
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 

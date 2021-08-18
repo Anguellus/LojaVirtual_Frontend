@@ -7,13 +7,14 @@ import { catchError, map } from 'rxjs/operators';
 import { LoginAdmin }from './loginAdmin.model';
 import { HeaderData } from '../../components/template/header/header-data.model';
 import { UsuarioAdmin } from '../usuarios/usuariosAdmin.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginAdminService {
   
-  baseURLLogin = "http://localhost:8080/admin/";
+  baseURLLogin = `${environment.API}admin/`;
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 

@@ -5,13 +5,14 @@ import { Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { EMPTY } from 'rxjs/internal/observable/empty';
 import { Usuario } from 'src/app/views/login/usuario.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientesService {
 
-  baseURL = "http://localhost:8080/usuarios/";
+  baseURL = `${environment.API}usuarios/`;
   
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 

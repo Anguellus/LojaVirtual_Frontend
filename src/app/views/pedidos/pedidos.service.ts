@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { EMPTY, Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { Pedido } from './pedido.model';
 
 @Injectable({
@@ -10,7 +11,7 @@ import { Pedido } from './pedido.model';
 })
 export class PedidosService {
 
-  baseURL = "http://localhost:8080/pedidos/";
+  baseURL = `${environment.API}/pedidos/`;
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 

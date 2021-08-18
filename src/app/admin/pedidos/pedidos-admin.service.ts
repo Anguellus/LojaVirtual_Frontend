@@ -4,13 +4,14 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { EMPTY, Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { Pedido } from 'src/app/views/pedidos/pedido.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PedidosAdminService {
   
-  baseURL = "http://localhost:8080/pedidos/";
+  baseURL = `${environment.API}pedidos/`;
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 

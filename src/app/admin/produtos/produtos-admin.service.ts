@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { EMPTY } from 'rxjs/internal/observable/empty';
 import { catchError, map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { Produto } from '../../components/produtos/produto.model';
 
 @Injectable({
@@ -11,7 +12,7 @@ import { Produto } from '../../components/produtos/produto.model';
 })
 export class ProdutosAdminService {
 
-  baseURL = "http://localhost:8080/produtos/";
+  baseURL = `${environment.API}produtos/`;
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
