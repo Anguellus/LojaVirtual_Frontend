@@ -1,4 +1,4 @@
-.header {
+/* .header {
     display: flex;
     margin-left: 0;
     padding-left: 0;
@@ -8,8 +8,45 @@
     background-color:#DA0037;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
+} */
+.container {
+    display: flex;
+    margin-left: 0;
+    padding-left: 0;
+    justify-content: flex-start;
+    align-items: center;
+    background-color:#DA0037;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
 }
 
+mat-toolbar {
+    background-color: #Da0037;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.toolbar-logo {
+    justify-content: left;
+    display: flex;
+}
+
+.toolbar-cliente{
+    justify-content: space-between;
+    display: flex;
+    padding-top: 10px;
+}
+
+.toolbar-contato{
+    padding: 0;
+
+}
+
+.toolbar-login{
+    padding: 0;
+
+}
+ 
 .tamanhoIcone {
     font-size: 40px;
 }
@@ -18,12 +55,7 @@
     padding-left: 20px;
 }
 
-.header a{
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    text-decoration: brown;
-    padding-right: 10px; 
+a{
     color: white;
 }
 
@@ -43,33 +75,23 @@
     color: white;
 }
 
-.spacer {
-    flex: 1 1 auto;
-  }
 
 .espacamento{
     margin-right: 20px;
 }
 
-.header .logo {
-    max-height: 81px;
+.logo {
     margin-left: 0;
     padding-left: 0;
-    flex: 5;
+    margin-top: 10px;
+    width: 120%;
+    height: 120%;
 }
 
-.header .logoWhats {
+.logoWhats {
     max-height: 30px;
     margin-left: 30px;
     padding-left: 0;
     margin-right: 10px;
     vertical-align: middle;
-}
-
-.header .title-group {
-    padding-left: 25px;
-}
-
-.header .title-group i {
-    padding-right: 5px;
 }

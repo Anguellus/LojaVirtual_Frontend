@@ -11,7 +11,7 @@ import { Pedido } from './pedido.model';
 })
 export class PedidosService {
 
-  baseURL = `${environment.API}/pedidos/`;
+  baseURL = `${environment.API}pedidos/`;
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 

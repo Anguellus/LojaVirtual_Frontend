@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Produto } from 'src/app/components/produtos/produto.model';
 import { ProdutosService } from 'src/app/components/produtos/produtos.service';
 import { HeaderData } from 'src/app/components/template/header/header-data.model';
@@ -17,7 +18,7 @@ export class HomeComponent implements OnInit {
 
   autenticado: boolean = false
 
-  constructor(private headerSrv: HeaderService, private carSvc: CarrinhoService, private produtoService: ProdutosService) { }
+  constructor(private router: Router, private headerSrv: HeaderService, private carSvc: CarrinhoService, private produtoService: ProdutosService) { }
 
   ngOnInit(): void {
     this.autenticado = this.headerSrv.headerData.autenticado
@@ -27,15 +28,20 @@ export class HomeComponent implements OnInit {
   }
 
   incluir(idProduto: number | undefined, nomeProduto: string, preco: number): void {
-    if (idProduto != undefined) {
-      let produto: ProdutoPedido = {
-        _id: idProduto,
-        nome: nomeProduto,
-        preco: preco,
-        totalProduto: 0,
-        quantidade: 0
+    if (!this.autenticado){
+      this.router.navigate(['/login'])
+    } else{
+      if (idProduto != undefined) {
+        let produto: ProdutoPedido = {
+          _id: idProduto,
+          nome: nomeProduto,
+          preco: preco,
+          totalProduto: 0,
+          quantidade: 0
+        }
+        this.carSvc.incluirItem(produto)
+        this.carSvc.showMessage("Produto incluído no carrinho!")
       }
-      this.carSvc.incluirItem(produto)
     }
   }
 

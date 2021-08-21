@@ -1,3 +1,4 @@
+
 <div class="background">
   <mat-card fxLayout="row wrap" fxLayoutGap="20px" class="container mat-elevation-z0">
     <mat-card *ngFor ="let item of produtos" class="card mat-elevation-z0">
@@ -10,10 +11,14 @@
       <mat-card-content>{{item.descricao}}</mat-card-content>
       <mat-card-content class="preco"><b>{{item.preco | currency: 'BRL'}}</b></mat-card-content>
       <mat-card-actions class="center">
-        <button *ngIf="this.autenticado" class="alinhamento"  mat-raised-button matTooltip="adicionar ao carrinho" (click)="incluir(item._id, item.nome, item.preco)">Adicionar ao carrinho
+        <button class="alinhamento"  mat-raised-button matTooltip="adicionar ao carrinho" (click)="incluir(item._id, item.nome, item.preco)">Adicionar ao carrinho
           <i class="material-icons">add_shopping_cart</i>
         </button>
       </mat-card-actions>
     </mat-card>
   </mat-card>
 </div>
+
+<!-- seletor para mostrar o botao de adicionar só se estiver logado
+    *ngIf="this.autenticado" 
+-->

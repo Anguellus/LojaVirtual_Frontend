@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HeaderService } from 'src/app/components/template/header/header.service';
 import { Pedido } from '../pedidos/pedido.model';
-import { PedidosService } from '../pedidos/pedidos.service';
 import { ProdutoPedido } from '../pedidos/produtoPedido.model';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,16 @@ export class CarrinhoService {
     totalPedido: 0
   })
 
-  constructor(private headerSrv: HeaderService) { }
+  constructor(private snackBar: MatSnackBar, private headerSrv: HeaderService) { }
+
+  showMessage(msg: string, isError: boolean = false): void {
+    this.snackBar.open(msg, 'X', {
+      duration: 3000,
+      horizontalPosition: "right",
+      verticalPosition: "top",
+      panelClass: isError ? ['msg-error'] : ['msg-success']
+    })
+  }
 
   incluirItem(item: ProdutoPedido) {
     let encontrado: boolean = false

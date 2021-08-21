@@ -8,9 +8,9 @@ import { HeaderData } from './header-data.model';
 export class HeaderService {
 
   private _headerData = new BehaviorSubject<HeaderData>({
-    autenticado: false,
+    autenticado: true,
     perfil: 'cliente',
-    nome: '',
+    nome: 'Andre',
     id: '',
     itensCarrinho: 0
   })
