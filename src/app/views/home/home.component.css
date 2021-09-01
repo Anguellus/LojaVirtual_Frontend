@@ -10,7 +10,7 @@
   align-content: space-between;
   background-color: white;
   border-radius: 0cm;
-  padding-left: 30px;
+  padding-left: 50px;
   padding-right: 30px;
   padding-top: 30px;
   row-gap: 20px;
@@ -45,12 +45,12 @@
 }
 
 .card {
-  max-width: 20%;
+  /* max-width: 20%; */
   background-color: white;
   color: black;
   align-content: center;
   align-items: center;
-  flex-grow: 1;
+  /* flex-grow: 1; */
   border-width: 1px;
   border-color: #DA0037;
   border-style: solid;
@@ -58,9 +58,20 @@
 }
 
 .foto{
-    width: 113%;
+    padding-top: 3vh;
+    width: 111.5%;
+    /* align-items: center; */
+    text-align: center;
+}
+
+.left {
+  text-align: left;
 }
   
   .avatar {
     background-size: cover;
+  }
+
+  mat-card-content {
+    text-align: center;
   }

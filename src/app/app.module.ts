@@ -10,8 +10,8 @@ import { FooterComponent } from './components/template/footer/footer.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
-import { MatSidenavModule }from '@angular/material/sidenav'
-import { MatListModule }from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav'
+import { MatListModule } from '@angular/material/list';
 import { LoginComponent } from './views/login/login.component';
 import { HomeComponent } from './views/home/home.component'
 import { MatCardModule } from '@angular/material/card';
@@ -25,14 +25,14 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { CommonModule } from '@angular/common';
 
 import { MatGridListModule } from '@angular/material/grid-list'
-import { BidiModule }from '@angular/cdk/bidi'
+import { BidiModule } from '@angular/cdk/bidi'
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatBadgeModule } from '@angular/material/badge'
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 
 import localePt from '@angular/common/locales/pt';
 import { LOCALE_ID } from '@angular/core';
@@ -46,7 +46,7 @@ import { MenuComponent } from './views/menu/menu.component';
 import { UsuariosAdminComponent } from './admin/usuarios/usuarios.component';
 
 import { LoginAdminComponent } from './admin/login-admin/login-admin.component';
-import { ReactiveFormsModule} from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms'
 
 import { ProdutosAdminComponent } from './admin/produtos/produto-admin.component';
 import { ProdutoCreateComponent } from './admin/produtos/produto-create/produto-create.component';
@@ -70,9 +70,20 @@ import { UsuarioDeleteComponent } from './admin/usuarios/usuario-delete/usuario-
 import { UsuarioCreateComponent } from './admin/usuarios/usuario-create/usuario-create.component';
 import { UsuarioUpdateComponent } from './admin/usuarios/usuario-update/usuario-update.component';
 import { GerenciarPedidoComponent } from './admin/pedidos/gerenciar-pedido/gerenciar-pedido.component';
-import { GerenciarPedidoUpdateComponent } from './admin/pedidos/gerenciar-pedido-update/gerenciar-pedido-update.component'
+import { GerenciarPedidoUpdateComponent } from './admin/pedidos/gerenciar-pedido-update/gerenciar-pedido-update.component';
+import { HeaderResComponent } from './components/template/header-res/header-res.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatIconModule } from '@angular/material/icon';
+
+import { BREAKPOINTS, DEFAULT_BREAKPOINTS } from '@angular/flex-layout';
 
 registerLocaleData(localePt);
+
+export const BreakPointsProvider = {
+  provide: BREAKPOINTS,
+  useValue: DEFAULT_BREAKPOINTS,
+  multi: true
+}
 
 @NgModule({
   declarations: [
@@ -104,7 +115,8 @@ registerLocaleData(localePt);
     UsuarioCreateComponent,
     UsuarioUpdateComponent,
     GerenciarPedidoComponent,
-    GerenciarPedidoUpdateComponent
+    GerenciarPedidoUpdateComponent,
+    HeaderResComponent
   ],
   imports: [
     BrowserModule,
@@ -130,12 +142,15 @@ registerLocaleData(localePt);
     MatTooltipModule,
     CommonModule,
     MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LayoutModule,
+    MatIconModule
   ],
   providers: [{
     provide: LOCALE_ID,
     useValue: 'pt-BR'
-  }],
+  },
+    BreakPointsProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

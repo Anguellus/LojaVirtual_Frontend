@@ -10,7 +10,7 @@ export class HeaderService {
   private _headerData = new BehaviorSubject<HeaderData>({
     autenticado: true,
     perfil: 'cliente',
-    nome: 'Andre',
+    nome: '',
     id: '',
     itensCarrinho: 0
   })

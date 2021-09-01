@@ -9,6 +9,15 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class CarrinhoService {
 
+  // produto de teste
+  prodPed: ProdutoPedido ={
+    _id: 123,
+    nome: 'Teste',
+    preco: 12.00,
+    quantidade: 3,
+    totalProduto: 36
+  }
+
   carrinhoData: Pedido = ({
     idCliente: '',
     produtos: [],

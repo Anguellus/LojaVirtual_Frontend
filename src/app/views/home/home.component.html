@@ -1,17 +1,20 @@
-
 <div class="background">
-  <mat-card fxLayout="row wrap" fxLayoutGap="20px" class="container mat-elevation-z0">
-    <mat-card *ngFor ="let item of produtos" class="card mat-elevation-z0">
+  <mat-card fxLayoutAlign="space-around center" fxLayout="row wrap" fxLayoutGap="20px" class="container mat-elevation-z0">
+    <mat-card fxFlex=" 0 1  calc (25% - 11px)" fxFlex.lt-md=" 0 1  calc(50% - 11px)" 
+      *ngFor="let item of produtos" class="card mat-elevation-z0">
       <mat-card-header class="cabecalho">
         <div mat-card-avatar style="background-image: url('{{item.fotoAvatar}}')" class="avatar"></div>
         <mat-card-title class="titulo center">{{item.nome}}</mat-card-title>
       </mat-card-header>
       <p></p>
-      <img mat-card-image class="foto" src={{item.foto}} alt="HB1">
-      <mat-card-content>{{item.descricao}}</mat-card-content>
-      <mat-card-content class="preco"><b>{{item.preco | currency: 'BRL'}}</b></mat-card-content>
-      <mat-card-actions class="center">
-        <button class="alinhamento"  mat-raised-button matTooltip="adicionar ao carrinho" (click)="incluir(item._id, item.nome, item.preco)">Adicionar ao carrinho
+      <mat-card-content>
+        <img mat-card-image class="foto" src={{item.foto}} alt="HB1">
+      </mat-card-content>
+      <mat-card-content class="left" >{{item.descricao}}</mat-card-content>
+      <mat-card-content class="left preco"><b>{{item.preco | currency: 'BRL'}}</b></mat-card-content>
+      <mat-card-actions class="left center">
+        <button class="alinhamento" mat-raised-button matTooltip="adicionar ao carrinho"
+          (click)="incluir(item._id, item.nome, item.preco)">Adicionar ao carrinho
           <i class="material-icons">add_shopping_cart</i>
         </button>
       </mat-card-actions>

@@ -1,62 +1,70 @@
-/* .header {
-    display: flex;
-    margin-left: 0;
-    padding-left: 0;
-    justify-content: flex-start;
-    height: 13%;
-    align-items: center;
-    background-color:#DA0037;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-} */
 .container {
-    display: flex;
+    background-color: tomato;
+}
+
+.logoWhats {
+    width: 4vh;
+    padding-right: 10px;
+}
+
+.logo {
+    width: 11vh;
+    align-items: left;
+    align-content: flex-start;
+    padding-top: 9px;
     margin-left: 0;
-    padding-left: 0;
-    justify-content: flex-start;
+}
+
+mat-toolbar, div {
+    background: #Da0037;
+    display: flex;
+    align-content: space-between;
     align-items: center;
-    background-color:#DA0037;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    padding: 0;
+    margin: 0;
 }
 
-mat-toolbar {
-    background-color: #Da0037;
-    margin-left: 0;
-    padding-left: 0;
+a {
+    color: white;
 }
 
-.toolbar-logo {
-    justify-content: left;
+/* .toolbar-logo {
+    flex
+} */
+
+.toolbar-menu {
     display: flex;
-}
-
-.toolbar-cliente{
-    justify-content: space-between;
-    display: flex;
-    padding-top: 10px;
+    padding-top: 5px;
 }
 
 .toolbar-contato{
-    padding: 0;
+    vertical-align: center;
+}
+
+
+@media only screen and (min-width : 1000px){
+    .toolbar-menu{
+        display: none;
+    }
+    .logo {
+        width: 10vh;
+    }
+    .logoWhats {
+        width: 2vh;
+    }
+
+    .toolbar-contato{
+        display: none;
+    }
 
 }
 
-.toolbar-login{
-    padding: 0;
-
-}
- 
 .tamanhoIcone {
-    font-size: 40px;
+    font-size: 35px;
 }
 
 .primeiroItem {
     padding-left: 20px;
-}
-
-a{
-    color: white;
 }
 
 .itensMenu {
@@ -71,27 +79,14 @@ a{
     margin-right: 10px;
 }
 
-.btnColor {
-    color: white;
-}
-
-
 .espacamento{
     margin-right: 20px;
 }
 
-.logo {
-    margin-left: 0;
-    padding-left: 0;
-    margin-top: 10px;
-    width: 120%;
-    height: 120%;
+.toolbar-login{
+    padding-right: 20px;
 }
 
-.logoWhats {
-    max-height: 30px;
-    margin-left: 30px;
-    padding-left: 0;
-    margin-right: 10px;
-    vertical-align: middle;
+.btnColor {
+    color: white;
 }

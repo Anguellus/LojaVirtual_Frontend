@@ -23,8 +23,6 @@ export class CarrinhoComponent implements OnInit {
 
   produtoDisplayedColumns = ['nome', 'preco', 'quantidade', 'total_item', 'action'];
 
-
-
   constructor(private headerSvc: HeaderService, private pedidosSvc: PedidosService, private router: Router, private carrinhoSvc: CarrinhoService) { }
 
   ngOnInit(): void {

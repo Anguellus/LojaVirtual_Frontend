@@ -1,23 +1,25 @@
-import { Component, OnInit,Output, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
 import { LoginService } from 'src/app/views/login/login.service';
-import { HeaderService } from './header.service';
+import { Router } from '@angular/router';
+import { HeaderService } from '../header/header.service';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  selector: 'app-header-res',
+  templateUrl: './header-res.component.html',
+  styleUrls: ['./header-res.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderResComponent {
 
-  @Output() public sideNavToggle = new EventEmitter();
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches),
+      shareReplay()
+    );
 
-
-  constructor(private headerService: HeaderService, private router: Router, private loginService: LoginService) { 
-  }
-
-  ngOnInit(): void {
-  }
+  constructor(private breakpointObserver: BreakpointObserver, private headerService: HeaderService, private router: Router, private loginService: LoginService) {}
 
   get autenticado(): boolean {
     return this.headerService.headerData.autenticado;
@@ -51,9 +53,4 @@ export class HeaderComponent implements OnInit {
       this.router.navigate(['/admin'])
     }
   }
-
-  public OnToggleSideNav (){
-    this.sideNavToggle.emit();
-  }
-
 }

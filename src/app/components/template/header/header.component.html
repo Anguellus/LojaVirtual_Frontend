@@ -3,10 +3,9 @@
     <meta name="viewport" content="width-device-width, initial-scale-1.0">
     <title>Raposo Delivery</title>
 </head>
-
-<div class="container mat-elevation-z0" fxLayout="row" fxLayoutAlign="space-between center">
+<div class ="container" >
     <!-- TOOLBAR DO LOGO -->
-    <mat-toolbar fxFlex="6" class="toolbar-logo mat-elevation-z0">
+    <mat-toolbar fxFlex="6" class="toolbar-logo">
         <div>
             <span>
                 <a routerLink="/">
@@ -16,13 +15,13 @@
         </div>
     </mat-toolbar>
     <!-- TOOLBAR MENU -->
-    <mat-toolbar class="toolbar-cliente" fxLayout="row" fxLayoutAlign="start center" fxFlex>
+    <mat-toolbar class="toolbar-menu">
         <div class="itensMenu primeiroItem" *ngIf="this.perfil == 'cliente'">
             <a routerLink="/">
                 <i matTooltip="Menu" class="material-icons tamanhoIcone">fastfood</i>
             </a>
         </div>
-        <div class="itensMenu" *ngIf="this.perfil == 'cliente' && this.autenticado">
+        <div>
             <a *ngIf="qtdItens != 0" matBadge="{{qtdItens}}" matBadgeOverlap="true" matBadgePosition="after"
                 routerLink="/carrinho">
                 <i matTooltip="Carrinho de compras" class="material-icons tamanhoIcone">shopping_cart</i>
@@ -58,13 +57,12 @@
         </div>
     </mat-toolbar>
     <!-- TOOLBAR CONTATO -->
-    <mat-toolbar class="toolbar-contato" fxFlex>
+    <mat-toolbar class="toolbar-contato">
         <div><i><img class="logoWhats" src="assets/whatsapp-logo.png" alt="logo"></i>Contato (21) 965440024</div>
     </mat-toolbar>
-    <!-- <span class="spacer"></span> -->
+
     <!-- TOOLBAR BEM VINDO E LOGIN -->
-    <mat-toolbar fxLayout="row" fxLayoutAlign="end center" fxFlex class="toolbar_login">
-        
+    <mat-toolbar class="toolbar-login" fxLayout="row" fxLayoutAlign="end center">
         <div class="bemVindo" *ngIf="this.autenticado">
             Bem vindo(a) {{this.nome}}
         </div>
